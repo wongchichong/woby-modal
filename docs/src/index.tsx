@@ -1,5 +1,5 @@
 import './index.css'
-import { $, $$, render } from 'voby'
+import { $, render } from 'voby'
 import { Vodal } from '../../src/index'
 import '../../dist/output.css'
 

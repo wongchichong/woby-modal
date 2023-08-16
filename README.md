@@ -12,13 +12,13 @@ pnpm add voby-modal --save
 ## Usage
 
 ```javascript
-import {} from 'voby';
+import { $, render } from 'voby'
 import Vodal from 'voby-modal';
 
 // include styles
 import '../../dist/output.css'
 
-class App extends React.Component {
+const App = () => {
     const visible = $(false)
 
     const show = (v: string) => {
@@ -30,7 +30,6 @@ class App extends React.Component {
         visible(false)
     }
 
-  render() {
     return (
       <div>
         <button onClick={this.show.bind(this)}>show</button>
@@ -53,7 +52,9 @@ class App extends React.Component {
       </div>
     );
   }
-}
+
+render(<App />, document.getElementById('app'))
+
 ```
 
 ## Props
