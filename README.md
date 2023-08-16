@@ -12,7 +12,7 @@ pnpm add voby-modal --save
 ## Usage
 
 ```javascript
-import { $, render } from 'voby'
+import { $, render } from 'voby'w
 import Vodal from 'voby-modal';
 
 // include styles
