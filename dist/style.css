@@ -452,13 +452,13 @@ video {
 
 @keyframes vodal-zoom-enter {
   from {
-    transform        : scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
   }
 }
 
 @keyframes vodal-zoom-leave {
   to {
-    transform        : scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
   }
 }
 
@@ -466,13 +466,13 @@ video {
 
 @keyframes vodal-slideDown-enter {
   from {
-    transform        : translate3d(0, -100px, 0);
+    transform: translate3d(0, -100px, 0);
   }
 }
 
 @keyframes vodal-slideDown-leave {
   to {
-    transform        : translate3d(0, -100px, 0);
+    transform: translate3d(0, -100px, 0);
   }
 }
 
@@ -480,13 +480,13 @@ video {
 
 @keyframes vodal-slideLeft-enter {
   from {
-    transform        : translate3d(-150px, 0, 0);
+    transform: translate3d(-150px, 0, 0);
   }
 }
 
 @keyframes vodal-slideLeft-leave {
   to {
-    transform        : translate3d(-150px, 0, 0);
+    transform: translate3d(-150px, 0, 0);
   }
 }
 
@@ -494,13 +494,13 @@ video {
 
 @keyframes vodal-slideRight-enter {
   from {
-    transform        : translate3d(150px, 0, 0);
+    transform: translate3d(150px, 0, 0);
   }
 }
 
 @keyframes vodal-slideRight-leave {
   to {
-    transform        : translate3d(150px, 0, 0);
+    transform: translate3d(150px, 0, 0);
   }
 }
 
@@ -508,13 +508,13 @@ video {
 
 @keyframes vodal-slideUp-enter {
   from {
-    transform        : translate3d(0, 100px, 0);
+    transform: translate3d(0, 100px, 0);
   }
 }
 
 @keyframes vodal-slideUp-leave {
   to {
-    transform        : translate3d(0, 100px, 0);
+    transform: translate3d(0, 100px, 0);
   }
 }
 
@@ -522,29 +522,29 @@ video {
 
 @keyframes vodal-flip-enter {
   from {
-    transform        : perspective(400px) rotate3d(1, 0, 0, 60deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 60deg);
   }
 
   70% {
-    transform        : perspective(400px) rotate3d(1, 0, 0, -15deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -15deg);
   }
 
   to {
-    transform        : perspective(400px);
+    transform: perspective(400px);
   }
 }
 
 @keyframes vodal-flip-leave {
   from {
-    transform        : perspective(400px);
+    transform: perspective(400px);
   }
 
   30% {
-    transform        : perspective(400px) rotate3d(1, 0, 0, -15deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -15deg);
   }
 
   to {
-    transform        : perspective(400px) rotate3d(1, 0, 0, 45deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 45deg);
   }
 }
 
@@ -552,7 +552,7 @@ video {
 
 @keyframes vodal-rotate-enter {
   from {
-    transform        : rotate3d(0, 0, 1, -180deg) scale3d(0.3, 0.3, 0.3);
+    transform: rotate3d(0, 0, 1, -180deg) scale3d(0.3, 0.3, 0.3);
   }
 }
 
@@ -566,17 +566,17 @@ video {
 
 @keyframes vodal-door-enter {
   from {
-    transform        : scale3d(0, 1, 1);
+    transform: scale3d(0, 1, 1);
   }
 }
 
 @keyframes vodal-door-leave {
   60% {
-    transform        : scale3d(0.01, 1, 1);
+    transform: scale3d(0.01, 1, 1);
   }
 
   to {
-    transform        : scale3d(0, 1, 0.1);
+    transform: scale3d(0, 1, 0.1);
   }
 }
 
@@ -724,6 +724,10 @@ video {
   margin: auto;
 }
 
+.hidden {
+  display: none;
+}
+
 .h-4 {
   height: 1rem;
 }
@@ -773,6 +777,82 @@ video {
   --tw-shadow: 0 1px 3px rgba(0,0,0,0.2);
   --tw-shadow-colored: 0 1px 3px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.vodal-fade-enter {
+  animation: vodal-fade-enter both ease-in;
+}
+
+.vodal-fade-leave {
+  animation: vodal-fade-leave both ease-out;
+}
+
+.vodal-zoom-enter {
+  animation: vodal-zoom-enter both cubic-bezier(0.4, 0, 0, 1.5);
+}
+
+.vodal-zoom-leave {
+  animation: vodal-zoom-leave both;
+}
+
+.vodal-slideDown-enter {
+  animation: vodal-slideDown-enter both cubic-bezier(0.4, 0, 0, 1.5);
+}
+
+.vodal-slideDown-leave {
+  animation: vodal-slideDown-leave both;
+}
+
+.vodal-slideLeft-enter {
+  animation: vodal-slideLeft-enter both cubic-bezier(0.4, 0, 0, 1.5);
+}
+
+.vodal-slideLeft-leave {
+  animation        : vodal-slideLeft-leave both;
+}
+
+.vodal-slideRight-enter {
+  animation: vodal-slideRight-enter both cubic-bezier(0.4, 0, 0, 1.5);
+}
+
+.vodal-slideRight-leave {
+  animation: vodal-slideRight-leave both;
+}
+
+.vodal-slideUp-enter {
+  animation: vodal-slideUp-enter both cubic-bezier(0.4, 0, 0, 1.5);
+}
+
+.vodal-slideUp-leave {
+  animation: vodal-slideUp-leave both;
+}
+
+.vodal-flip-enter {
+  animation          : vodal-flip-enter both ease-in;
+  backface-visibility: visible !important;
+}
+
+.vodal-flip-leave {
+  animation          : vodal-flip-leave both;
+  backface-visibility: visible !important;
+}
+
+.vodal-rotate-enter {
+  animation       : vodal-rotate-enter both;
+  transform-origin: center;
+}
+
+.vodal-rotate-leave {
+  animation       : vodal-rotate-leave both;
+  transform-origin: center;
+}
+
+.vodal-door-enter {
+  animation: vodal-door-enter both cubic-bezier(0.4, 0, 0, 1.5);
+}
+
+.vodal-door-leave {
+  animation: vodal-door-leave both;
 }
 
 .before\:absolute::before {

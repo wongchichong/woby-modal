@@ -108,14 +108,13 @@ const Vodal = (props) => {
     }
   ) : null;
   const style = useMemo(() => ({
-    display: $$(isShow) ? "" : "none",
     animationDuration: $$(duration) + "ms"
   }));
   return /* @__PURE__ */ jsxs(
     "div",
     {
       style,
-      className: ["w-full h-full z-[100] left-0 top-0 fixed", () => `vodal-fade-${animationType}`],
+      className: ["w-full h-full z-[100] left-0 top-0 fixed", () => `vodal-fade-${animationType}`, () => $$(isShow) ? "" : "hidden"],
       onAnimationEnd: animationEnd,
       tabIndex: -1,
       ref: elRef,

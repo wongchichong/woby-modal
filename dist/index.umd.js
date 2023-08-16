@@ -110,14 +110,13 @@
       }
     ) : null;
     const style = voby.useMemo(() => ({
-      display: voby.$$(isShow) ? "" : "none",
       animationDuration: voby.$$(duration) + "ms"
     }));
     return /* @__PURE__ */ jsxRuntime.jsxs(
       "div",
       {
         style,
-        className: ["w-full h-full z-[100] left-0 top-0 fixed", () => `vodal-fade-${animationType}`],
+        className: ["w-full h-full z-[100] left-0 top-0 fixed", () => `vodal-fade-${animationType}`, () => voby.$$(isShow) ? "" : "hidden"],
         onAnimationEnd: animationEnd,
         tabIndex: -1,
         ref: elRef,

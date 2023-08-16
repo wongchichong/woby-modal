@@ -13,7 +13,7 @@
         "//lib": "babel src/rodal.js --out-file lib/rodal.js && BABEL_MODULE=es babel src/rodal.js --out-file lib/rodal.esm.js && cp src/rodal.css lib",
         "//test": "npm run lib",
         "//release": "npm run build && npm run lib && npm publish",
-        "css:watch": "tailwindcss -i ./src/input.css -i ./docs/src/input.css -o ./dist/output.css --watch",
+        "css:watch": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
         "css": "tailwindcss -i ./src/input.css -o ./dist/output.css",
         "declaration": "tsc --build --force --declaration --emitDeclarationOnly --verbose",
         "declaration:watch": "tsc --build --force --declaration --emitDeclarationOnly --verbose --watch",

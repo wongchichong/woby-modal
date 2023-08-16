@@ -11,210 +11,111 @@
         }
     }
 
-    .vodal-fade-enter {
-        -webkit-animation: vodal-fade-enter both ease-in;
-        animation        : vodal-fade-enter both ease-in;
-    }
-
     @keyframes vodal-fade-leave {
         to {
             opacity: 0;
         }
     }
 
-    .vodal-fade-leave {
-        -webkit-animation: vodal-fade-leave both ease-out;
-        animation        : vodal-fade-leave both ease-out;
-    }
-
     /* -- zoom -- */
     @keyframes vodal-zoom-enter {
         from {
-            -webkit-transform: scale3d(0.3, 0.3, 0.3);
-            transform        : scale3d(0.3, 0.3, 0.3);
+            transform: scale3d(0.3, 0.3, 0.3);
         }
-    }
-
-    .vodal-zoom-enter {
-        -webkit-animation: vodal-zoom-enter both cubic-bezier(0.4, 0, 0, 1.5);
-        animation        : vodal-zoom-enter both cubic-bezier(0.4, 0, 0, 1.5);
     }
 
     @keyframes vodal-zoom-leave {
         to {
-            -webkit-transform: scale3d(0.3, 0.3, 0.3);
-            transform        : scale3d(0.3, 0.3, 0.3);
+            transform: scale3d(0.3, 0.3, 0.3);
         }
-    }
-
-    .vodal-zoom-leave {
-        -webkit-animation: vodal-zoom-leave both;
-        animation        : vodal-zoom-leave both;
     }
 
     /* -- slideDown -- */
     @keyframes vodal-slideDown-enter {
         from {
-            -webkit-transform: translate3d(0, -100px, 0);
-            transform        : translate3d(0, -100px, 0);
+            transform: translate3d(0, -100px, 0);
         }
-    }
-
-    .vodal-slideDown-enter {
-        -webkit-animation: vodal-slideDown-enter both cubic-bezier(0.4, 0, 0, 1.5);
-        animation        : vodal-slideDown-enter both cubic-bezier(0.4, 0, 0, 1.5);
     }
 
     @keyframes vodal-slideDown-leave {
         to {
-            -webkit-transform: translate3d(0, -100px, 0);
-            transform        : translate3d(0, -100px, 0);
+            transform: translate3d(0, -100px, 0);
         }
-    }
-
-    .vodal-slideDown-leave {
-        -webkit-animation: vodal-slideDown-leave both;
-        animation        : vodal-slideDown-leave both;
     }
 
     /* -- slideLeft -- */
     @keyframes vodal-slideLeft-enter {
         from {
-            -webkit-transform: translate3d(-150px, 0, 0);
-            transform        : translate3d(-150px, 0, 0);
+            transform: translate3d(-150px, 0, 0);
         }
-    }
-
-    .vodal-slideLeft-enter {
-        -webkit-animation: vodal-slideLeft-enter both cubic-bezier(0.4, 0, 0, 1.5);
-        animation        : vodal-slideLeft-enter both cubic-bezier(0.4, 0, 0, 1.5);
     }
 
     @keyframes vodal-slideLeft-leave {
         to {
-            -webkit-transform: translate3d(-150px, 0, 0);
-            transform        : translate3d(-150px, 0, 0);
+            transform: translate3d(-150px, 0, 0);
         }
-    }
-
-    .vodal-slideLeft-leave {
-        -webkit-animation: vodal-slideLeft-leave both;
-        animation        : vodal-slideLeft-leave both;
     }
 
     /* -- slideRight -- */
     @keyframes vodal-slideRight-enter {
         from {
-            -webkit-transform: translate3d(150px, 0, 0);
-            transform        : translate3d(150px, 0, 0);
+            transform: translate3d(150px, 0, 0);
         }
-    }
-
-    .vodal-slideRight-enter {
-        -webkit-animation: vodal-slideRight-enter both cubic-bezier(0.4, 0, 0, 1.5);
-        animation        : vodal-slideRight-enter both cubic-bezier(0.4, 0, 0, 1.5);
     }
 
     @keyframes vodal-slideRight-leave {
         to {
-            -webkit-transform: translate3d(150px, 0, 0);
-            transform        : translate3d(150px, 0, 0);
+            transform: translate3d(150px, 0, 0);
         }
-    }
-
-    .vodal-slideRight-leave {
-        -webkit-animation: vodal-slideRight-leave both;
-        animation        : vodal-slideRight-leave both;
     }
 
     /* -- slideUp -- */
     @keyframes vodal-slideUp-enter {
         from {
-            -webkit-transform: translate3d(0, 100px, 0);
-            transform        : translate3d(0, 100px, 0);
+            transform: translate3d(0, 100px, 0);
         }
-    }
-
-    .vodal-slideUp-enter {
-        -webkit-animation: vodal-slideUp-enter both cubic-bezier(0.4, 0, 0, 1.5);
-        animation        : vodal-slideUp-enter both cubic-bezier(0.4, 0, 0, 1.5);
     }
 
     @keyframes vodal-slideUp-leave {
         to {
-            -webkit-transform: translate3d(0, 100px, 0);
-            transform        : translate3d(0, 100px, 0);
+            transform: translate3d(0, 100px, 0);
         }
-    }
-
-    .vodal-slideUp-leave {
-        -webkit-animation: vodal-slideUp-leave both;
-        animation        : vodal-slideUp-leave both;
     }
 
     /* -- flip -- */
-
     @keyframes vodal-flip-enter {
         from {
-            -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 60deg);
-            transform        : perspective(400px) rotate3d(1, 0, 0, 60deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, 60deg);
         }
 
         70% {
-            -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -15deg);
-            transform        : perspective(400px) rotate3d(1, 0, 0, -15deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, -15deg);
         }
 
         to {
-            -webkit-transform: perspective(400px);
-            transform        : perspective(400px);
+            transform: perspective(400px);
         }
-    }
-
-    .vodal-flip-enter {
-        -webkit-animation          : vodal-flip-enter both ease-in;
-        animation                  : vodal-flip-enter both ease-in;
-        -webkit-backface-visibility: visible !important;
-        backface-visibility        : visible !important;
     }
 
     @keyframes vodal-flip-leave {
         from {
-            -webkit-transform: perspective(400px);
-            transform        : perspective(400px);
+            transform: perspective(400px);
         }
 
         30% {
-            -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -15deg);
-            transform        : perspective(400px) rotate3d(1, 0, 0, -15deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, -15deg);
         }
 
         to {
-            -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 45deg);
-            transform        : perspective(400px) rotate3d(1, 0, 0, 45deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, 45deg);
         }
-    }
-
-    .vodal-flip-leave {
-        -webkit-animation          : vodal-flip-leave both;
-        animation                  : vodal-flip-leave both;
-        -webkit-backface-visibility: visible !important;
-        backface-visibility        : visible !important;
     }
 
     /* -- rotate -- */
     @keyframes vodal-rotate-enter {
         from {
-            -webkit-transform: rotate3d(0, 0, 1, -180deg) scale3d(0.3, 0.3, 0.3);
-            transform        : rotate3d(0, 0, 1, -180deg) scale3d(0.3, 0.3, 0.3);
+            transform: rotate3d(0, 0, 1, -180deg) scale3d(0.3, 0.3, 0.3);
         }
-    }
-
-    .vodal-rotate-enter {
-        -webkit-animation       : vodal-rotate-enter both;
-        animation               : vodal-rotate-enter both;
-        -webkit-transform-origin: center;
-        transform-origin        : center;
     }
 
     @keyframes vodal-rotate-leave {
@@ -224,40 +125,98 @@
         }
     }
 
-    .vodal-rotate-leave {
-        -webkit-animation       : vodal-rotate-leave both;
-        animation               : vodal-rotate-leave both;
-        -webkit-transform-origin: center;
-        transform-origin        : center;
-    }
-
     /* -- door -- */
     @keyframes vodal-door-enter {
         from {
-            -webkit-transform: scale3d(0, 1, 1);
-            transform        : scale3d(0, 1, 1);
+            transform: scale3d(0, 1, 1);
         }
-    }
-
-    .vodal-door-enter {
-        -webkit-animation: vodal-door-enter both cubic-bezier(0.4, 0, 0, 1.5);
-        animation        : vodal-door-enter both cubic-bezier(0.4, 0, 0, 1.5);
     }
 
     @keyframes vodal-door-leave {
         60% {
-            -webkit-transform: scale3d(0.01, 1, 1);
-            transform        : scale3d(0.01, 1, 1);
+            transform: scale3d(0.01, 1, 1);
         }
 
         to {
-            -webkit-transform: scale3d(0, 1, 0.1);
-            transform        : scale3d(0, 1, 0.1);
+            transform: scale3d(0, 1, 0.1);
         }
     }
 
-    .vodal-door-leave {
-        -webkit-animation: vodal-door-leave both;
-        animation        : vodal-door-leave both;
-    }
+}
+
+.vodal-fade-enter {
+    animation: vodal-fade-enter both ease-in;
+}
+
+.vodal-fade-leave {
+    animation: vodal-fade-leave both ease-out;
+}
+
+.vodal-zoom-enter {
+    animation: vodal-zoom-enter both cubic-bezier(0.4, 0, 0, 1.5);
+}
+
+.vodal-zoom-leave {
+    animation: vodal-zoom-leave both;
+}
+
+.vodal-slideDown-enter {
+    animation: vodal-slideDown-enter both cubic-bezier(0.4, 0, 0, 1.5);
+}
+
+.vodal-slideDown-leave {
+    animation: vodal-slideDown-leave both;
+}
+
+.vodal-slideLeft-enter {
+    animation: vodal-slideLeft-enter both cubic-bezier(0.4, 0, 0, 1.5);
+}
+
+.vodal-slideLeft-leave {
+    -webkit-animation: vodal-slideLeft-leave both;
+    animation        : vodal-slideLeft-leave both;
+}
+
+.vodal-slideRight-enter {
+    animation: vodal-slideRight-enter both cubic-bezier(0.4, 0, 0, 1.5);
+}
+
+.vodal-slideRight-leave {
+    animation: vodal-slideRight-leave both;
+}
+
+.vodal-slideUp-enter {
+    animation: vodal-slideUp-enter both cubic-bezier(0.4, 0, 0, 1.5);
+}
+
+.vodal-slideUp-leave {
+    animation: vodal-slideUp-leave both;
+}
+
+.vodal-flip-enter {
+    animation          : vodal-flip-enter both ease-in;
+    backface-visibility: visible !important;
+}
+
+.vodal-flip-leave {
+    animation          : vodal-flip-leave both;
+    backface-visibility: visible !important;
+}
+
+.vodal-rotate-enter {
+    animation       : vodal-rotate-enter both;
+    transform-origin: center;
+}
+
+.vodal-rotate-leave {
+    animation       : vodal-rotate-leave both;
+    transform-origin: center;
+}
+
+.vodal-door-enter {
+    animation: vodal-door-enter both cubic-bezier(0.4, 0, 0, 1.5);
+}
+
+.vodal-door-leave {
+    animation: vodal-door-leave both;
 }

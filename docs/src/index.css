@@ -25,13 +25,12 @@ a:focus {
 }
 
 button {
-    color             : inherit;
-    font              : inherit;
-    margin            : 0;
-    overflow          : visible;
-    text-transform    : none;
-    -webkit-appearance: button;
-    cursor            : pointer;
+    color         : inherit;
+    font          : inherit;
+    margin        : 0;
+    overflow      : visible;
+    text-transform: none;
+    cursor        : pointer;
 }
 
 button:focus {

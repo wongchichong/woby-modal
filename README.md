@@ -1,49 +1,55 @@
-# vodal [![Build Status](https://img.shields.io/travis/chenjiahan/vodal.svg?style=flat-square)](https://travis-ci.org/chenjiahan/vodal) [![NPM downloads](http://img.shields.io/npm/dm/vodal.svg?style=flat-square)](https://npmjs.org/package/vodal)
+# vodal [![Build Status](https://img.shields.io/travis/wongchichong/voby-modal.svg?style=flat-square)](https://travis-ci.org/wongchichong/voby-modal.svg) [![NPM downloads](http://img.shields.io/pnpm/dm/voby-modal.svg.svg?style=flat-square)](https://npmjs.org/package/vodal)
 
 A React modal with animations.  
-[Example](https://chenjiahan.github.io/vodal/)
+[Example](https://github.com/wongchichong/voby-modal)
 
 ## Installation
 
 ```bash
-# React 17 or 18
-npm i vodal --save
-
-# React 15 or 16, install vodal v1
-npm i vodal@1 --save
+pnpm add voby-modal --save
 ```
 
 ## Usage
 
 ```javascript
-import React from 'react';
-import vodal from 'vodal';
+import {} from 'voby';
+import Vodal from 'voby-modal';
 
 // include styles
-import 'vodal/lib/vodal.css';
+import '../../dist/output.css'
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { visible: false };
-  }
+    const visible = $(false)
 
-  show() {
-    this.setState({ visible: true });
-  }
+    const show = (v: string) => {
+        animation(v)
+        visible(true)
+    }
 
-  hide() {
-    this.setState({ visible: false });
-  }
+    const hide = () => {
+        visible(false)
+    }
 
   render() {
     return (
       <div>
         <button onClick={this.show.bind(this)}>show</button>
 
-        <vodal visible={this.state.visible} onClose={this.hide.bind(this)}>
-          <div>Content</div>
-        </vodal>
+        <Vodal
+            visible={visible}
+            onClose={hide}
+            animation={animation}
+            closeOnEsc className='w-[50%] h-[25%]'
+        >
+            <div>Content</div>
+
+            <button className="vodal-confirm-btn" onClick={hide}>
+                ok
+            </button>
+            <button className="vodal-cancel-btn" onClick={hide}>
+                close
+            </button>
+        </Vodal>
       </div>
     );
   }
@@ -54,9 +60,6 @@ class App extends React.Component {
 
 | Property         | Type   | Default | Description                                          |
 | ---------------- | ------ | ------- | ---------------------------------------------------- |
-| width            | number | 400     | width of dialog                                      |
-| height           | number | 240     | height of dialog                                     |
-| measure          | string | px      | measure of width and height                          |
 | onClose          | func   | /       | handler called onClose of modal                      |
 | onAnimationEnd   | func   | /       | handler called onEnd of animation                    |
 | visible          | bool   | false   | whether to show dialog                               |
@@ -68,7 +71,7 @@ class App extends React.Component {
 | enterAnimation   | string | /       | enter animation type (higher order than 'animation') |
 | leaveAnimation   | string |         | leave animation type (higher order than 'animation') |
 | duration         | number | 300     | animation duration                                   |
-| className        | string | /       | className for the container                          |
+| className        | string | w-[50%] h-[25%]       | className for the container                          |
 | customStyles     | object | /       | custom styles                                        |
 | customMaskStyles | object | /       | custom mask styles                                   |
 | id               | string | /       | id for dialog                                        |
@@ -87,4 +90,3 @@ class App extends React.Component {
 
 ## Other
 
-[Vue version](https://github.com/chenjiahan/vodal)
