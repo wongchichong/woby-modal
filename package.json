@@ -1,59 +1,55 @@
 {
-  "name": "rodal",
-  "version": "2.1.0",
-  "description": "A React modal with animations.",
-  "main": "lib/rodal.js",
-  "module": "lib/rodal.esm.js",
-  "types": "./index.d.ts",
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
-  "scripts": {
-    "dev": "node_modules/.bin/webpack-dev-server",
-    "build": "webpack -p --hide-modules",
-    "lib": "babel src/rodal.js --out-file lib/rodal.js && BABEL_MODULE=es babel src/rodal.js --out-file lib/rodal.esm.js && cp src/rodal.css lib",
-    "test": "npm run lib",
-    "release": "npm run build && npm run lib && npm publish"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/chenjiahan/rodal.git"
-  },
-  "keywords": [
-    "react",
-    "modal",
-    "animation",
-    "react-modal",
-    "react-component"
-  ],
-  "author": "neverland",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/chenjiahan/rodal/issues"
-  },
-  "homepage": "https://github.com/chenjiahan/rodal#readme",
-  "dependencies": {
-    "prop-types": "^15.6.0",
-    "classnames": "^2.2.6"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.8.4",
-    "@babel/plugin-proposal-class-properties": "^7.8.3",
-    "@babel/preset-env": "^7.8.4",
-    "@babel/preset-react": "^7.8.3",
-    "babel-loader": "^8.0.6",
-    "css-loader": "^3.4.2",
-    "postcss-loader": "^3.0.0",
-    "prop-types": "^15.7.2",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "style-loader": "^1.1.3",
-    "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.10.2"
-  },
-  "peerDependencies": {
-    "react": ">= ^17.0.0 || >= ^18.0.0"
-  }
+    "name": "voby-modal",
+    "version": "1.0.0",
+    "description": "A React modal with animations.",
+    "main": "./dist/index.cjs.js",
+    "module": "./dist/index.es.js",
+    "browser": "./dist/index.umd.js",
+    "types": "./dist/types/index.d.ts",
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org/"
+    },
+    "scripts": {
+        "//lib": "babel src/rodal.js --out-file lib/rodal.js && BABEL_MODULE=es babel src/rodal.js --out-file lib/rodal.esm.js && cp src/rodal.css lib",
+        "//test": "npm run lib",
+        "//release": "npm run build && npm run lib && npm publish",
+        "css:watch": "tailwindcss -i ./src/input.css -i ./docs/src/input.css -o ./dist/output.css --watch",
+        "css": "tailwindcss -i ./src/input.css -o ./dist/output.css",
+        "declaration": "tsc --build --force --declaration --emitDeclarationOnly --verbose",
+        "declaration:watch": "tsc --build --force --declaration --emitDeclarationOnly --verbose --watch",
+        "watch": "run-p build:watch css:watch",
+        "build": "run-s css build:vite css",
+        "build:web": "vite build --config=vite.config.web.ts --force --mode production",
+        "web": "vite preview --config=vite.config.web.ts --host",
+        "dev:only": "vite --config=vite.config.web.ts --force --mode dev --host",
+        "dev": "run-p css:watch dev:only",
+        "build:vite": "vite build",
+        "build:watch": "vite build --watch",
+        "preview": "vite preview --host"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/chenjiahan/rodal.git"
+    },
+    "keywords": [
+        "react",
+        "modal",
+        "animation",
+        "react-modal",
+        "react-component"
+    ],
+    "author": "neverland",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/chenjiahan/rodal/issues"
+    },
+    "homepage": "https://github.com/chenjiahan/rodal#readme",
+    "peerDependencies": {
+        "voby": "workspace:../woby"
+    },
+    "devDependencies": {
+        "tailwindcss": "^3.3.3",
+        "vite": "^4.4.8",
+        "vite-plugin-dts": "^2.3.0"
+    }
 }

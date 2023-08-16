@@ -1,26 +1,26 @@
-# Rodal [![Build Status](https://img.shields.io/travis/chenjiahan/rodal.svg?style=flat-square)](https://travis-ci.org/chenjiahan/rodal) [![NPM downloads](http://img.shields.io/npm/dm/rodal.svg?style=flat-square)](https://npmjs.org/package/rodal)
+# vodal [![Build Status](https://img.shields.io/travis/chenjiahan/vodal.svg?style=flat-square)](https://travis-ci.org/chenjiahan/vodal) [![NPM downloads](http://img.shields.io/npm/dm/vodal.svg?style=flat-square)](https://npmjs.org/package/vodal)
 
 A React modal with animations.  
-[Example](https://chenjiahan.github.io/rodal/)
+[Example](https://chenjiahan.github.io/vodal/)
 
 ## Installation
 
 ```bash
 # React 17 or 18
-npm i rodal --save
+npm i vodal --save
 
-# React 15 or 16, install rodal v1
-npm i rodal@1 --save
+# React 15 or 16, install vodal v1
+npm i vodal@1 --save
 ```
 
 ## Usage
 
 ```javascript
 import React from 'react';
-import Rodal from 'rodal';
+import vodal from 'vodal';
 
 // include styles
-import 'rodal/lib/rodal.css';
+import 'vodal/lib/vodal.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -41,9 +41,9 @@ class App extends React.Component {
       <div>
         <button onClick={this.show.bind(this)}>show</button>
 
-        <Rodal visible={this.state.visible} onClose={this.hide.bind(this)}>
+        <vodal visible={this.state.visible} onClose={this.hide.bind(this)}>
           <div>Content</div>
-        </Rodal>
+        </vodal>
       </div>
     );
   }
