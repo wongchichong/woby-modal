@@ -2,9 +2,10 @@
  * Rodal v2.0.0 https://github.com/chenjiahan/vodal
  * =============================== */
 
-import { $, $$, CSSProperties, ObservableMaybe, useEffect, useMemo } from 'voby'
+import { $, $$, CSSProperties, ObservableMaybe, useEffect, useMemo, type JSX } from 'voby'
 import { } from 'voby/dist/types/jsx/types'
 import '../dist/output.css'
+export * from './DialogTitle'
 
 const IN_BROWSER = typeof window !== 'undefined'
 const UA = IN_BROWSER && window.navigator.userAgent.toLowerCase()
@@ -36,10 +37,10 @@ const Dialog = (props: VodalProps & { animationType?: ObservableMaybe<string> })
             after:absolute after:content-[''] after:h-0.5 after:w-full after:bg-[#999] after:transition-[background] after:duration-[0.2s] after:-mt-px after:rounded-[100%] after:left-0 after:top-2/4 
             hover:before:bg-[#333] hover:after:bg-[#333]
             "
-            onClick={onClose}
+            onClick={e => onClose?.(e, 'committed')}
             onKeyPress={event => {
                 if (onClose && event.which === 13) {
-                    onClose(event)
+                    onClose(event, 'committed')
                 }
             }}
             tabIndex={0}
@@ -51,13 +52,13 @@ const Dialog = (props: VodalProps & { animationType?: ObservableMaybe<string> })
         ...customStyles,
     }))
 
-    return <div style={style} className={[`absolute z-[101] bg-[#fff] shadow-[0_1px_3px_rgba(0,0,0,0.2)] m-auto p-[15px] rounded-[3px] inset-0 focus:outline-none`, () => `vodal-${$$(animation)}-${$$(animationType)}`, className]} id={id}>
+    return <div style={style} className={[`absolute z-[101] bg-[#fff] shadow-[0_1px_3px_rgba(0,0,0,0.2)] m-auto p-[15px] rounded-[3px] inset-0 focus:outline-none`, () => `vodal-${$$(animation)}-${$$(animationType)}`, props.class ?? className]} id={id}>
         {children}
         {CloseButton}
     </div>
 }
 
-interface VodalProps {
+type VodalProps = {
     visible?: ObservableMaybe<boolean>
     showMask?: ObservableMaybe<boolean>
     closeOnEsc?: ObservableMaybe<boolean>
@@ -67,16 +68,14 @@ interface VodalProps {
     enterAnimation?: ObservableMaybe<string>
     leaveAnimation?: ObservableMaybe<string>
     duration?: ObservableMaybe<number>
-    className?: JSX.Class
     customStyles?: ObservableMaybe<CSSProperties>
     customMaskStyles?: ObservableMaybe<CSSProperties>
-    onClose?: (event?) => void
+    onClose?: (event, reason: 'backdropClick' | 'escapeKeyDown' | 'committed') => void
     onAnimationEnd?: () => void
     id?: string,
-    children?: JSX.Children
-}
+} & JSX.HTMLAttributes<HTMLDivElement>
 
-export const Vodal = (props: VodalProps) => {
+export const Vodal = (props: VodalProps): JSX.Element => {
     const newProps = {
         ...{
             visible: false, showMask: true, closeOnEsc: false, closeMaskOnClick: true, showCloseButton: true, animation: 'zoom',
@@ -89,6 +88,7 @@ export const Vodal = (props: VodalProps) => {
         visible, showMask, closeOnEsc, closeMaskOnClick,
         duration, customMaskStyles,
         onClose, onAnimationEnd,
+        showCloseButton,
     } = newProps
 
     const isShow = $(false)
@@ -115,7 +115,7 @@ export const Vodal = (props: VodalProps) => {
 
     const onKeyUp = event => {
         if ($$(closeOnEsc) && event.keyCode === 27) {
-            onClose?.(event)
+            onClose?.(event, 'escapeKeyDown')
         }
     }
 
@@ -135,7 +135,7 @@ export const Vodal = (props: VodalProps) => {
         <div
             className="w-full h-full z-[100] absolute bg-[rgba(0,0,0,0.3)] left-0 top-0"
             style={customMaskStyles}
-            onClick={(e) => $$(closeMaskOnClick) ? onClose?.(e) : {}}
+            onClick={(e) => $$(closeMaskOnClick) ? onClose?.(e, 'backdropClick') : {}}
         />
     ) : null
 

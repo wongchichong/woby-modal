@@ -32,11 +32,11 @@
         "url": "git+https://github.com/chenjiahan/rodal.git"
     },
     "keywords": [
-        "react",
+        "voby",
         "modal",
         "animation",
-        "react-modal",
-        "react-component"
+        "voby-modal",
+        "voby-component"
     ],
     "author": "neverland",
     "license": "MIT",
@@ -45,7 +45,8 @@
     },
     "homepage": "https://github.com/chenjiahan/rodal#readme",
     "peerDependencies": {
-        "voby": "workspace:../woby"
+        "voby": "workspace:../woby",
+        "voby-styled": "workspace:../voby-styled"
     },
     "devDependencies": {
         "tailwindcss": "^3.3.3",
