@@ -1,6 +1,6 @@
 # Woby-Modal [![NPM downloads](http://img.shields.io/pnpm/dm/woby-modal.svg.svg?style=flat-square)](https://npmjs.org/package/woby-modal)
 
-A React modal with animations.  
+A Woby modal with animations.  
 [Example](https://github.com/wongchichong/woby-modal)
 
 ## Installation
