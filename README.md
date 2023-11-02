@@ -1,6 +1,7 @@
 # Woby-Modal
 
 A woby modal with animations. [A Rodal port](https://github.com/chenjiahan/rodal)
+
 [Example](https://github.com/wongchichong/woby-modal)
 
 ## Installation
@@ -12,7 +13,7 @@ pnpm add voby-modal --save
 ## Usage
 
 ```javascript
-import { $, render } from 'woby'w
+import { $, render } from 'woby'
 import { Wodal } from 'woby-modal';
 
 // include styles
