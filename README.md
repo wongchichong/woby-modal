@@ -1,7 +1,7 @@
-# vodal [![Build Status](https://img.shields.io/travis/wongchichong/voby-modal.svg?style=flat-square)](https://travis-ci.org/wongchichong/voby-modal.svg) [![NPM downloads](http://img.shields.io/pnpm/dm/voby-modal.svg.svg?style=flat-square)](https://npmjs.org/package/vodal)
+# Woby-Modal [![NPM downloads](http://img.shields.io/pnpm/dm/woby-modal.svg.svg?style=flat-square)](https://npmjs.org/package/woby-modal)
 
 A React modal with animations.  
-[Example](https://github.com/wongchichong/voby-modal)
+[Example](https://github.com/wongchichong/woby-modal)
 
 ## Installation
 
@@ -12,8 +12,8 @@ pnpm add voby-modal --save
 ## Usage
 
 ```javascript
-import { $, render } from 'voby'w
-import Vodal from 'voby-modal';
+import { $, render } from 'woby'w
+import { Wodal } from 'woby-modal';
 
 // include styles
 import '../../dist/output.css'
@@ -34,7 +34,7 @@ const App = () => {
       <div>
         <button onClick={this.show.bind(this)}>show</button>
 
-        <Vodal
+        <Wodal
             visible={visible}
             onClose={hide}
             animation={animation}
@@ -48,7 +48,7 @@ const App = () => {
             <button className="vodal-cancel-btn" onClick={hide}>
                 close
             </button>
-        </Vodal>
+        </Wodal>
       </div>
     );
   }

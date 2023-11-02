@@ -1,4 +1,4 @@
-import { tw } from 'voby-styled'
+import { tw } from 'woby-styled'
 import '../dist/output.css'
 
 export const DialogTitle = tw('h2')`font-medium text-xl leading-[1.6] tracking-[0.0075em] flex-[0_0_auto] m-0 px-6 py-4`

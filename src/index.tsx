@@ -2,8 +2,8 @@
  * Rodal v2.0.0 https://github.com/chenjiahan/vodal
  * =============================== */
 
-import { $, $$, CSSProperties, ObservableMaybe, useEffect, useMemo, type JSX } from 'voby'
-import { } from 'voby/dist/types/jsx/types'
+import { $, $$, CSSProperties, ObservableMaybe, useEffect, useMemo, type JSX } from 'woby'
+
 import '../dist/output.css'
 export * from './DialogTitle'
 

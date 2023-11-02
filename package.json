@@ -1,7 +1,7 @@
 {
-    "name": "voby-modal",
+    "name": "woby-modal",
     "version": "1.0.0",
-    "description": "A React modal with animations.",
+    "description": "A Woby modal with animations.",
     "main": "./dist/index.cjs.js",
     "module": "./dist/index.es.js",
     "browser": "./dist/index.umd.js",
@@ -17,8 +17,8 @@
         "css": "tailwindcss -i ./src/input.css -o ./dist/output.css",
         "declaration": "tsc --build --force --declaration --emitDeclarationOnly --verbose",
         "declaration:watch": "tsc --build --force --declaration --emitDeclarationOnly --verbose --watch",
-        "watch": "run-p build:watch css:watch",
-        "build": "run-s css build:vite css",
+        "watch": "run-p build:watch css:watch declaration:watch",
+        "build": "run-s css build:vite css declaration",
         "build:web": "vite build --config=vite.config.web.ts --force --mode production",
         "web": "vite preview --config=vite.config.web.ts --host",
         "dev:only": "vite --config=vite.config.web.ts --force --mode dev --host",
@@ -29,28 +29,28 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/chenjiahan/rodal.git"
+        "url": "git+https://github.com/wongchichong/woby-modal.git"
     },
     "keywords": [
-        "voby",
+        "woby",
         "modal",
         "animation",
-        "voby-modal",
-        "voby-component"
+        "woby-modal",
+        "woby-component"
     ],
     "author": "neverland",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/chenjiahan/rodal/issues"
+        "url": "https://github.com/wongchichong/woby-modal/issues"
     },
-    "homepage": "https://github.com/chenjiahan/rodal#readme",
+    "homepage": "https://github.com/wongchichong/woby-modal#readme",
     "peerDependencies": {
-        "voby": "workspace:../woby",
-        "voby-styled": "workspace:../voby-styled"
+        "woby": "workspace:../woby",
+        "woby-styled": "workspace:../woby-styled"
     },
     "devDependencies": {
         "tailwindcss": "^3.3.3",
-        "vite": "^4.4.8",
+        "vite": "^4.4.11",
         "vite-plugin-dts": "^2.3.0"
     }
 }
