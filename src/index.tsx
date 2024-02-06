@@ -11,7 +11,7 @@ const IN_BROWSER = typeof window !== 'undefined'
 const UA = IN_BROWSER && window.navigator.userAgent.toLowerCase()
 const IS_IE_9 = UA && UA.indexOf('msie 9.0') > 0
 
-const Dialog = (props: VodalProps & { animationType?: ObservableMaybe<string> }) => {
+const Dialog = (props: WodalProps & { animationType?: ObservableMaybe<string> }) => {
     const {
         showCloseButton,
         onClose,
@@ -58,7 +58,7 @@ const Dialog = (props: VodalProps & { animationType?: ObservableMaybe<string> })
     </div>
 }
 
-type VodalProps = {
+type WodalProps = {
     visible?: ObservableMaybe<boolean>
     showMask?: ObservableMaybe<boolean>
     closeOnEsc?: ObservableMaybe<boolean>
@@ -75,12 +75,12 @@ type VodalProps = {
     id?: string,
 } & JSX.HTMLAttributes<HTMLDivElement>
 
-export const Vodal = (props: VodalProps): JSX.Element => {
+export const Wodal = (props: WodalProps): JSX.Element => {
     const newProps = {
         ...{
             visible: false, showMask: true, closeOnEsc: false, closeMaskOnClick: true, showCloseButton: true, animation: 'zoom',
             enterAnimation: '', leaveAnimation: '', duration: 300, customStyles: {}, customMaskStyles: {},
-        } as VodalProps
+        } as WodalProps
         , ...props
     }
 
@@ -145,7 +145,7 @@ export const Vodal = (props: VodalProps): JSX.Element => {
 
     return <div
         style={style}
-        className={['w-full h-full z-[100] left-0 top-0 fixed', () => `vodal-fade-${animationType}`, () => $$(isShow) ? '' : 'hidden',]}
+        className={['w-full h-full z-[100] left-0 top-0 fixed', () => `vodal-fade-${$$(animationType)}`, () => $$(isShow) ? '' : 'hidden',]}
         onAnimationEnd={animationEnd}
         tabIndex={-1}
         ref={elRef}

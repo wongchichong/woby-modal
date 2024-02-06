@@ -1,6 +1,6 @@
 import './index.css'
 import { $, render } from 'woby'
-import { Vodal } from '../../src/index'
+import { Wodal } from '../../src/index'
 import '../../dist/output.css'
 
 export const App = () => {
