@@ -1,6 +1,6 @@
 {
     "name": "woby-modal",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "A Woby modal with animations.",
     "main": "./dist/index.cjs.js",
     "module": "./dist/index.es.js",
@@ -45,8 +45,8 @@
     },
     "homepage": "https://github.com/wongchichong/woby-modal#readme",
     "peerDependencies": {
-        "woby": "workspace:../woby",
-        "woby-styled": "workspace:../woby-styled"
+        "woby": "workspace:^",
+        "woby-styled": "workspace:^"
     },
     "devDependencies": {
         "tailwindcss": "^3.4.1",
