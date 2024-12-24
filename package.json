@@ -1,6 +1,6 @@
 {
     "name": "woby-modal",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "A Woby modal with animations.",
     "main": "./dist/index.cjs.js",
     "module": "./dist/index.es.js",
