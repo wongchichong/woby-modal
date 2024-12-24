@@ -39,14 +39,14 @@ const App = () => {
             visible={visible}
             onClose={hide}
             animation={animation}
-            closeOnEsc className='w-[50%] h-[25%]'
+            closeOnEsc class='w-[50%] h-[25%]'
         >
             <div>Content</div>
 
-            <button className="vodal-confirm-btn" onClick={hide}>
+            <button class="vodal-confirm-btn" onClick={hide}>
                 ok
             </button>
-            <button className="vodal-cancel-btn" onClick={hide}>
+            <button class="vodal-cancel-btn" onClick={hide}>
                 close
             </button>
         </Wodal>

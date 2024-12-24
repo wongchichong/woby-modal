@@ -31,7 +31,7 @@ const Dialog = (props: WodalProps & { animationType?: ObservableMaybe<string> })
 
     const CloseButton = showCloseButton ? (
         <span
-            className="absolute cursor-pointer w-4 h-4 right-4 top-4 before:rotate-45 after:-rotate-45
+            class="absolute cursor-pointer w-4 h-4 right-4 top-4 before:rotate-45 after:-rotate-45
             
             before:absolute before:content-[''] before:h-0.5 before:w-full before:bg-[#999] before:transition-[background] before:duration-[0.2s] before:-mt-px before:rounded-[100%] before:left-0 before:top-2/4 
             after:absolute after:content-[''] after:h-0.5 after:w-full after:bg-[#999] after:transition-[background] after:duration-[0.2s] after:-mt-px after:rounded-[100%] after:left-0 after:top-2/4 
@@ -52,7 +52,7 @@ const Dialog = (props: WodalProps & { animationType?: ObservableMaybe<string> })
         ...customStyles,
     }))
 
-    return <div style={style} className={[`absolute z-[101] bg-[#fff] shadow-[0_1px_3px_rgba(0,0,0,0.2)] m-auto p-[15px] rounded-[3px] inset-0 focus:outline-none`, () => `vodal-${$$(animation)}-${$$(animationType)}`, props.class ?? className]} id={id}>
+    return <div style={style} class={[`absolute z-[101] bg-[#fff] shadow-[0_1px_3px_rgba(0,0,0,0.2)] m-auto rounded-[3px] inset-0 focus:outline-none`, () => `vodal-${$$(animation)}-${$$(animationType)}`, props.class ?? className]} id={id}>
         {children}
         {CloseButton}
     </div>
@@ -133,7 +133,7 @@ export const Wodal = (props: WodalProps): JSX.Element => {
 
     const Mask = $$(showMask) ? (
         <div
-            className="w-full h-full z-[100] absolute bg-[rgba(0,0,0,0.3)] left-0 top-0"
+            class="w-full h-full z-[100] absolute bg-[rgba(0,0,0,0.3)] left-0 top-0"
             style={customMaskStyles}
             onClick={(e) => $$(closeMaskOnClick) ? onClose?.(e, 'backdropClick') : {}}
         />
@@ -145,7 +145,7 @@ export const Wodal = (props: WodalProps): JSX.Element => {
 
     return <div
         style={style}
-        className={['w-full h-full z-[100] left-0 top-0 fixed', () => `vodal-fade-${$$(animationType)}`, () => $$(isShow) ? '' : 'hidden',]}
+        class={['w-full h-full z-[100] left-0 top-0 fixed', () => `vodal-fade-${$$(animationType)}`, () => $$(isShow) ? '' : 'hidden',]}
         onAnimationEnd={animationEnd}
         tabIndex={-1}
         ref={elRef}
