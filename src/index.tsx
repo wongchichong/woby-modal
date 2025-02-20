@@ -4,7 +4,7 @@
 
 import { $, $$, CSSProperties, ObservableMaybe, useEffect, useMemo, type JSX } from 'woby'
 
-import '../dist/output.css'
+import './input.css'
 export * from './DialogTitle'
 
 const IN_BROWSER = typeof window !== 'undefined'
@@ -143,7 +143,7 @@ export const Wodal = (props: WodalProps): JSX.Element => {
         animationDuration: $$(duration) + 'ms',
     }))
 
-    return <div
+    return () => $$(visible) ? <div
         style={style}
         class={['w-full h-full z-[100] left-0 top-0 fixed', () => `vodal-fade-${$$(animationType)}`, () => $$(isShow) ? '' : 'hidden',]}
         onAnimationEnd={animationEnd}
@@ -159,4 +159,5 @@ export const Wodal = (props: WodalProps): JSX.Element => {
             }}
         />
     </div>
+        : null
 }

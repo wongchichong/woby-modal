@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 @layer base {
 
@@ -121,7 +119,7 @@
     @keyframes vodal-rotate-leave {
         to {
             -webkit-transform: rotate3d(0, 0, 1, 180deg) scale3d(0.3, 0.3, 0.3);
-            transform        : rotate3d(0, 0, 1, 180deg) scale3d(0.3, 0.3, 0.3);
+            transform: rotate3d(0, 0, 1, 180deg) scale3d(0.3, 0.3, 0.3);
         }
     }
 
@@ -174,7 +172,7 @@
 
 .vodal-slideLeft-leave {
     -webkit-animation: vodal-slideLeft-leave both;
-    animation        : vodal-slideLeft-leave both;
+    animation: vodal-slideLeft-leave both;
 }
 
 .vodal-slideRight-enter {
@@ -194,22 +192,22 @@
 }
 
 .vodal-flip-enter {
-    animation          : vodal-flip-enter both ease-in;
+    animation: vodal-flip-enter both ease-in;
     backface-visibility: visible !important;
 }
 
 .vodal-flip-leave {
-    animation          : vodal-flip-leave both;
+    animation: vodal-flip-leave both;
     backface-visibility: visible !important;
 }
 
 .vodal-rotate-enter {
-    animation       : vodal-rotate-enter both;
+    animation: vodal-rotate-enter both;
     transform-origin: center;
 }
 
 .vodal-rotate-leave {
-    animation       : vodal-rotate-leave both;
+    animation: vodal-rotate-leave both;
     transform-origin: center;
 }
 

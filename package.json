@@ -17,11 +17,11 @@
         "//lib": "babel src/rodal.js --out-file lib/rodal.js && BABEL_MODULE=es babel src/rodal.js --out-file lib/rodal.esm.js && cp src/rodal.css lib",
         "//test": "npm run lib",
         "css:watch": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
-        "css": "tailwindcss -i ./src/input.css -o ./dist/output.css",
+        "css11": "tailwindcss -i ./src/input.css -o ./dist/output.css",
         "declaration": "tsc --build --force --declaration --emitDeclarationOnly --declarationMap  --verbose",
         "declaration:watch": "tsc --build --force --declaration --emitDeclarationOnly --declarationMap  --verbose --watch",
         "watch": "run-p build:watch css:watch declaration:watch",
-        "build": "run-s css build:vite css declaration",
+        "build": "run-s build:vite declaration",
         "build:web": "vite build --config=vite.config.web.ts --force --mode production",
         "web": "vite preview --config=vite.config.web.ts --host",
         "dev:only": "vite --config=vite.config.web.ts --force --mode dev --host",
@@ -52,10 +52,11 @@
         "woby-styled": "workspace:../woby-styled"
     },
     "devDependencies": {
-        "tailwindcss": "^3.4.17",
-        "vite": "^6.0.5"
+        "tailwindcss": "^4.0.6",
+        "@tailwindcss/vite": "^4.0.6",
+        "vite": "^6.1.0"
     },
     "dependencies": {
-        "typescript": "5.7.2"
+        "typescript": "5.7.3"
     }
 }

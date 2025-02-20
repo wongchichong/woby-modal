@@ -1,5 +1,5 @@
 import { tw } from 'woby-styled'
-import '../dist/output.css'
+import './input.css'
 //@ts-ignore
 import { ObservableMaybe, ObservableReadonly, type JSX } from 'woby'
 
