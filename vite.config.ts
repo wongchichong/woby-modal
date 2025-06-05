@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite'
-import path from 'path'
-import dts from 'vite-plugin-dts'
+import tailwindcss from '@tailwindcss/vite'
 
 const config = defineConfig({
     build: {
@@ -26,11 +25,13 @@ const config = defineConfig({
         jsx: 'automatic',
     },
     plugins: [
-        dts({ entryRoot: './src', outputDir: './dist/types' })
+        tailwindcss()
     ],
     resolve: {
         alias: {
-            '~': path.resolve(__dirname, 'src'),
+            'woby/jsx-dev-runtime': 'woby',
+            'woby/jsx-runtime': 'woby',
+            'woby': 'woby'
         },
     },
 })

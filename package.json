@@ -6,13 +6,11 @@
     "module": "./dist/index.es.js",
     "browser": "./dist/index.umd.js",
     "types": "./dist/types/index.d.ts",
+    "type": "module",
     "publishConfig": {
         "registry": "https://registry.npmjs.org/"
     },
     "scripts": {
-        "//lib": "babel src/rodal.js --out-file lib/rodal.js && BABEL_MODULE=es babel src/rodal.js --out-file lib/rodal.esm.js && cp src/rodal.css lib",
-        "//test": "npm run lib",
-        "//release": "npm run build && npm run lib && npm publish",
         "css:watch": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
         "css": "tailwindcss -i ./src/input.css -o ./dist/output.css",
         "declaration": "tsc --build --force --declaration --emitDeclarationOnly --verbose",
@@ -44,13 +42,13 @@
         "url": "https://github.com/wongchichong/woby-modal/issues"
     },
     "homepage": "https://github.com/wongchichong/woby-modal#readme",
-    "peerDependencies": {
-        "woby": "workspace:^",
-        "woby-styled": "workspace:^"
-    },
     "devDependencies": {
-        "tailwindcss": "^3.4.1",
+        "tailwindcss": "^4.1.3",
+        "@tailwindcss/cli": "^4.1.3",
+        "@tailwindcss/vite": "^4.1.3",
         "vite": "^4.5.2",
-        "vite-plugin-dts": "^2.3.0"
+        "vite-plugin-dts": "^2.3.0",
+        "woby": "workspace:../woby",
+        "woby-styled": "^1.0.8"
     }
 }
