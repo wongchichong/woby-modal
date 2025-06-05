@@ -35,7 +35,7 @@ export const App = () => {
         }
         return (
             <button
-                className="btn scale"
+                class="btn scale"
                 onClick={() => show(value)}
                 style={style}
             >
@@ -45,27 +45,27 @@ export const App = () => {
     })
 
     return (
-        <div className="wrap">
+        <div class="wrap">
             <div
-                className="container"
+                class="container"
                 style={{ paddingTop: (window.innerHeight - 440) / 2 }}
             >
-                <h1 className="title scale">vodal</h1>
-                <h3 className="intro scale">A React modal with animations.</h3>
-                <div className="btn-area">{buttons}</div>
+                <h1 class="title scale">vodal</h1>
+                <h3 class="intro scale">A React modal with animations.</h3>
+                <div class="btn-area">{buttons}</div>
             </div>
             <Wodal
                 visible={visible}
                 onClose={hide}
                 animation={animation}
-                closeOnEsc className='w-[50%] h-[25%]'
+                closeOnEsc class='w-[50%] h-[25%]'
             >
-                <div className="header">vodal</div>
-                <div className="body">A React modal with animations.</div>
-                <button className="vodal-confirm-btn" onClick={hide}>
+                <div class="header">vodal</div>
+                <div class="body">A React modal with animations.</div>
+                <button class="vodal-confirm-btn" onClick={hide}>
                     ok
                 </button>
-                <button className="vodal-cancel-btn" onClick={hide}>
+                <button class="vodal-cancel-btn" onClick={hide}>
                     close
                 </button>
             </Wodal>
