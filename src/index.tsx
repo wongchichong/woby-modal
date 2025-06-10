@@ -16,11 +16,8 @@ const Dialog = (props: WodalProps & { animationType?: ObservableMaybe<string> })
 	const animation = useMemo(() => ($$(animationType) === "enter" ? $$(props.enterAnimation) : $$(props.leaveAnimation)) || $$(props.animation))
 
 	const CloseButton = showCloseButton ? (
-		<span
-			className="absolute cursor-pointer w-4 h-4 right-4 top-4 before:rotate-45 after:-rotate-45
-            before:absolute before:content-[''] before:h-0.5 before:w-full before:bg-[#999] before:transition-[background] before:duration-[0.2s] before:-mt-px before:rounded-[100%] before:left-0 before:top-2/4 
-            after:absolute after:content-[''] after:h-0.5 after:w-full after:bg-[#999] after:transition-[background] after:duration-[0.2s] after:-mt-px after:rounded-[100%] after:left-0 after:top-2/4 
-            hover:before:bg-[#333] hover:after:bg-[#333]"
+		<button
+			className={"absolute cursor-pointer w-4 h-4 right-4 top-4 [&.svg]:hover:bg-red"}
 			onClick={(e) => onClose?.(e, "committed")}
 			onKeyPress={(event) => {
 				if (onClose && event.which === 13) {
@@ -28,7 +25,21 @@ const Dialog = (props: WodalProps & { animationType?: ObservableMaybe<string> })
 				}
 			}}
 			tabIndex={0}
-		/>
+		>
+			<svg
+				className="w-4 h-4"
+				fill="none"
+				viewBox="0 0 24 24"
+				stroke="currentColor"
+			>
+				<path
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					strokeWidth={2}
+					d="M6 18L18 6M6 6l12 12"
+				/>
+			</svg>
+		</button>
 	) : null
 
 	const dragging = $(false)
