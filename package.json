@@ -58,7 +58,6 @@
         "@tailwindcss/vite": "^4.1.3",
         "vite": "^4.5.2",
         "vite-plugin-dts": "^2.3.0",
-        "woby": "workspace:../woby",
         "woby-styled": "^1.0.8"
     }
 }

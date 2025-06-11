@@ -4,6 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 const config = defineConfig({
     build: {
         minify: false,
+        emptyOutDir: false,
         lib: {
             entry: ["./src/index.tsx"],
             name: "woby-modal",

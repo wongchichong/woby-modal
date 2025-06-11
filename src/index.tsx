@@ -44,12 +44,10 @@ const Dialog = (props: WodalProps & { animationType?: ObservableMaybe<string> })
 
 	const dragging = $(false)
 	const ref = $<HTMLElement>()
-	const position = $<{ x: number; y: number }>()
 	const relativeCursorPos = $<{ x: number; y: number }>(null)
+	const animationFrame = $<number>()
 	const style = useMemo(() => ({
 		animationDuration: $$(duration) + "ms",
-		left: $$(position)?.x,
-		top: $$(position)?.y,
 		...customStyles,
 	}))
 
@@ -61,7 +59,8 @@ const Dialog = (props: WodalProps & { animationType?: ObservableMaybe<string> })
 		if ($$(dragging)) {
 			document.addEventListener("mousemove", onMouseMove)
 			document.addEventListener("mouseup", onMouseUp)
-		} else if ($$(dragging)) {
+		}
+		else {
 			document.removeEventListener("mousemove", onMouseMove)
 			document.removeEventListener("mouseup", onMouseUp)
 		}
@@ -70,15 +69,14 @@ const Dialog = (props: WodalProps & { animationType?: ObservableMaybe<string> })
 	const onMouseDown = (e) => {
 		// only left mouse button
 		if (e.button !== 0) return
-
-		let pos = ref().getBoundingClientRect()
 		const relativePos = {
-			x: e.pageX - pos.left,
-			y: e.pageY - pos.top,
+			x: e.clientX,
+			y: e.clientY,
 		}
 
 		dragging(true)
 		relativeCursorPos(relativePos)
+		console.log("relativePos", $$(relativeCursorPos));
 
 		e.stopPropagation()
 		e.preventDefault()
@@ -93,11 +91,16 @@ const Dialog = (props: WodalProps & { animationType?: ObservableMaybe<string> })
 	const onMouseMove = (e) => {
 		if (!$$(dragging)) return
 		const pos = {
-			x: e.pageX - $$(relativeCursorPos).x,
-			y: e.pageY - $$(relativeCursorPos).y,
+			x: e.clientX - $$(relativeCursorPos).x,
+			y: e.clientY - $$(relativeCursorPos).y,
 		}
 
-		position(pos)
+
+		cancelAnimationFrame($$(animationFrame));
+		animationFrame(requestAnimationFrame(() => {
+			$$(ref).style.transform = `translate3d(${pos.x}px, ${pos.y}px, 0)`;
+		}))
+
 		e.stopPropagation()
 		e.preventDefault()
 	}
