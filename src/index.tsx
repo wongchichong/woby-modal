@@ -76,16 +76,10 @@ const Dialog = (props: WodalProps & { animationType?: ObservableMaybe<string> })
 
 		dragging(true)
 		relativeCursorPos(relativePos)
-		console.log("relativePos", $$(relativeCursorPos));
-
-		e.stopPropagation()
-		e.preventDefault()
 	}
 
 	const onMouseUp = (e) => {
 		dragging(false)
-		e.stopPropagation()
-		e.preventDefault()
 	}
 
 	const onMouseMove = (e) => {
