@@ -17,7 +17,7 @@ const Dialog = (props: WodalProps & { animationType?: ObservableMaybe<string> })
 
 	const CloseButton = showCloseButton ? (
 		<button
-			className={"absolute cursor-pointer w-4 h-4 right-4 top-4 [&.svg]:hover:bg-red"}
+			className={"absolute cursor-pointer w-4 h-4 right-8 top-4 [&.svg]:hover:bg-red"}
 			onClick={(e) => onClose?.(e, "committed")}
 			onKeyPress={(event) => {
 				if (onClose && event.which === 13) {
