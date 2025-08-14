@@ -10,8 +10,8 @@ const IN_BROWSER = typeof window !== "undefined"
 const UA = IN_BROWSER && window.navigator.userAgent.toLowerCase()
 const IS_IE_9 = UA && UA.indexOf("msie 9.0") > 0
 
-const Dialog = (props: WodalProps & { animationType?: ObservableMaybe<string> }) => {
-	const { draggable, showCloseButton, onClose, duration, customStyles, id, animationType, children, className = "w-[50%] h-[25%]" } = props
+const ModalDialog = (props: WodalProps & { animationType?: ObservableMaybe<string> }) => {
+	const { draggable, showCloseButton, onClose, duration, id, animationType, children, className = "w-[50%] h-[25%]", class: cls } = props
 
 	const animation = useMemo(() => ($$(animationType) === "enter" ? $$(props.enterAnimation) : $$(props.leaveAnimation)) || $$(props.animation))
 
@@ -48,7 +48,6 @@ const Dialog = (props: WodalProps & { animationType?: ObservableMaybe<string> })
 	const animationFrame = $<number>()
 	const style = useMemo(() => ({
 		animationDuration: $$(duration) + "ms",
-		...customStyles,
 	}))
 
 	useEffect(() => {
@@ -89,7 +88,6 @@ const Dialog = (props: WodalProps & { animationType?: ObservableMaybe<string> })
 			y: e.clientY - $$(relativeCursorPos).y,
 		}
 
-
 		cancelAnimationFrame($$(animationFrame));
 		animationFrame(requestAnimationFrame(() => {
 			$$(ref).style.transform = `translate3d(${pos.x}px, ${pos.y}px, 0)`;
@@ -103,9 +101,8 @@ const Dialog = (props: WodalProps & { animationType?: ObservableMaybe<string> })
 		<div
 			style={style}
 			className={[
-				`fixed z-[101] w-fit h-fit bg-[#fff] shadow-[0_1px_3px_rgba(0,0,0,0.2)] m-auto p-[15px] rounded-[3px] inset-0 focus:outline-none`,
-				() => `vodal-${$$(animation)}-${$$(animationType)}`,
-				props.class ?? className,
+				`fixed z-[101] w-[60%] h-[60%] bg-[#fff] shadow-[0_1px_3px_rgba(0,0,0,0.2)] m-auto p-[15px] rounded-[3px] inset-0 focus:outline-none`,
+				() => `vodal-${$$(animation)}-${$$(animationType)}`, className, cls,
 			]}
 			id={id}
 			ref={ref}
@@ -128,8 +125,6 @@ export type WodalProps = {
 	enterAnimation?: ObservableMaybe<string>
 	leaveAnimation?: ObservableMaybe<string>
 	duration?: ObservableMaybe<number>
-	customStyles?: ObservableMaybe<CSSProperties>
-	customMaskStyles?: ObservableMaybe<CSSProperties>
 	onClose?: (event, reason: "backdropClick" | "escapeKeyDown" | "committed") => void
 	onAnimationEnd?: () => void
 	id?: string
@@ -148,17 +143,14 @@ export const Wodal = (props: WodalProps): JSX.Element => {
 			enterAnimation: "",
 			leaveAnimation: "",
 			duration: 300,
-			customStyles: {},
-			customMaskStyles: {},
 		} as WodalProps),
 		...props,
 	}
 
-	const { visible, showMask, closeOnEsc, closeMaskOnClick, duration, customMaskStyles, onClose, onAnimationEnd } = newProps
+	const { visible, showMask, closeMaskOnClick, onClose } = newProps
 
 	const isShow = $(false)
 	const animationType = $("leave")
-	const elRef = $<HTMLDivElement>(null)
 
 	const enter = () => {
 		isShow(true)
@@ -178,51 +170,24 @@ export const Wodal = (props: WodalProps): JSX.Element => {
 		}
 	})
 
-	const onKeyUp = (event) => {
-		if ($$(closeOnEsc) && event.keyCode === 27) {
-			onClose?.(event, "escapeKeyDown")
-		}
-	}
-
-	const animationEnd = (event) => {
-		if ($$(animationType) === "leave") {
-			isShow(false)
-		} else if ($$(closeOnEsc)) {
-			$$(elRef)?.focus()
-		}
-
-		if (event.target === $$(elRef) && onAnimationEnd) {
-			onAnimationEnd()
-		}
-	}
-
 	const Mask = $$(showMask) ? (
 		<div
 			className="w-screen h-screen z-[100] absolute bg-[rgba(0,0,0,0.3)] left-0 top-0"
-			style={customMaskStyles}
 			onClick={(e) => ($$(closeMaskOnClick) ? onClose?.(e, "backdropClick") : {})}
 		/>
 	) : null
 
-	const style = useMemo(() => ({
-		animationDuration: $$(duration) + "ms",
-	}))
-
-	return (
+	return () => ($$(isShow) ?
 		<div
-			style={style}
 			className={["w-fit h-fit z-[100] left-0 top-0 fixed ", () => ($$(isShow) ? "" : "hidden")]}
-			onAnimationEnd={animationEnd}
-			ref={elRef}
-			onKeyUp={onKeyUp}
 		>
 			{Mask}
-			<Dialog
+			<ModalDialog
 				{...{
 					animationType,
 					...newProps,
 				}}
 			/>
-		</div>
+		</div> : null
 	)
 }
