@@ -2,7 +2,7 @@
  * Rodal v2.0.0 https://github.com/chenjiahan/vodal
  * =============================== */
 
-import { $, $$, CSSProperties, ObservableMaybe, useEffect, useMemo, type JSX } from "woby"
+import { $, $$, ObservableMaybe, useEffect, useMemo, type JSX } from "woby"
 
 export * from "./DialogTitle"
 
@@ -11,7 +11,7 @@ const UA = IN_BROWSER && window.navigator.userAgent.toLowerCase()
 const IS_IE_9 = UA && UA.indexOf("msie 9.0") > 0
 
 const ModalDialog = (props: WodalProps & { animationType?: ObservableMaybe<string> }) => {
-	const { draggable, showCloseButton, onClose, duration, id, animationType, children, className = "w-[50%] h-[25%]", class: cls } = props
+	const { draggable, showCloseButton, onClose, duration, id, animationType, children, className = "h-[25%]", widthPercentage, class: cls } = props
 
 	const animation = useMemo(() => ($$(animationType) === "enter" ? $$(props.enterAnimation) : $$(props.leaveAnimation)) || $$(props.animation))
 
@@ -101,8 +101,9 @@ const ModalDialog = (props: WodalProps & { animationType?: ObservableMaybe<strin
 		<div
 			style={style}
 			className={[
-				`fixed z-[101] w-[60%] h-[60%] bg-[#fff] shadow-[0_1px_3px_rgba(0,0,0,0.2)] m-auto p-[15px] rounded-[3px] inset-0 focus:outline-none`,
+				`fixed z-[101] h-[60%] bg-[#fff] shadow-[0_1px_3px_rgba(0,0,0,0.2)] m-auto p-[15px] rounded-[3px] inset-0 focus:outline-none`,
 				() => `vodal-${$$(animation)}-${$$(animationType)}`, className, cls,
+				widthPercentage ?? "w-[50%]"
 			]}
 			id={id}
 			ref={ref}
@@ -125,6 +126,7 @@ export type WodalProps = {
 	enterAnimation?: ObservableMaybe<string>
 	leaveAnimation?: ObservableMaybe<string>
 	duration?: ObservableMaybe<number>
+	widthPercentage?: ObservableMaybe<string>
 	onClose?: (event, reason: "backdropClick" | "escapeKeyDown" | "committed") => void
 	onAnimationEnd?: () => void
 	id?: string
@@ -143,6 +145,7 @@ export const Wodal = (props: WodalProps): JSX.Element => {
 			enterAnimation: "",
 			leaveAnimation: "",
 			duration: 300,
+			widthPercentage: props.widthPercentage,
 		} as WodalProps),
 		...props,
 	}
