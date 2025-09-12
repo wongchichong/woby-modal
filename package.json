@@ -1,5 +1,5 @@
 {
-    "name": "woby-modal",
+    "name": "@woby/modal",
     "version": "1.0.6",
     "description": "A Woby modal with animations.",
     "main": "./dist/index.cjs.js",
@@ -32,7 +32,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/wongchichong/woby-modal.git"
+        "url": "git+https://github.com/wongchichong/modal.git"
     },
     "keywords": [
         "woby",
@@ -44,15 +44,15 @@
     "author": "neverland",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/wongchichong/woby-modal/issues"
+        "url": "https://github.com/wongchichong/modal/issues"
     },
-    "homepage": "https://github.com/wongchichong/woby-modal#readme",
+    "homepage": "https://github.com/wongchichong/modal#readme",
     "peerDependencies": {
         "woby": "workspace:../woby",
-        "woby-styled": "workspace:../woby-styled"
+        "@woby/styled": "workspace:../styled"
     },
     "devDependencies": {
-        "tailwindcss": "^4.0.6",
+        "tailwindcss": "^4.0.17",
         "@tailwindcss/vite": "^4.0.6",
         "vite": "^6.1.0"
     },

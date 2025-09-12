@@ -25,8 +25,8 @@ const config = defineConfig({
     resolve: {
         alias: {
             '~': path.resolve(__dirname, 'src'),
-            'woby/jsx-dev-runtime': process.argv.includes('dev') ? path.resolve('../woby/src/jsx/runtime') : 'woby', //'woby/jsx-dev-runtime',
-            'woby/jsx-runtime': process.argv.includes('dev') ? path.resolve('../woby/src/jsx/runtime') : 'woby', //'woby/jsx-runtime',
+            'woby/jsx-dev-runtime': process.argv.includes('dev') ? path.resolve('../woby/src/jsx/runtime') : 'woby', //'woby',
+            'woby/jsx-runtime': process.argv.includes('dev') ? path.resolve('../woby/src/jsx/runtime') : 'woby', //'woby',
             'woby': process.argv.includes('dev') ? path.resolve('../woby/src') : 'woby'
         },
     },

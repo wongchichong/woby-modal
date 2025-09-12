@@ -54,7 +54,7 @@ export const App = () => {
                 <h3 class="intro scale">A React modal with animations.</h3>
                 <div class="btn-area">{buttons}</div>
             </div>
-            <Vodal
+            <Wodal
                 visible={visible}
                 onClose={hide}
                 animation={animation}
@@ -68,7 +68,7 @@ export const App = () => {
                 <button class="vodal-cancel-btn" onClick={hide}>
                     close
                 </button>
-            </Vodal>
+            </Wodal>
         </div>
     )
 }
