@@ -58,18 +58,37 @@ export const App = () => {
                 visible={visible}
                 onClose={hide}
                 animation={animation}
-                closeOnEsc class='w-[50%] h-[25%]'
+                closeOnEsc
+                class='w-[300px] h-[500px]'
             >
                 <div class="header">vodal</div>
-                <div class="body">A React modal with animations.</div>
+                <div class="body w-[300px] h-[500px]">
+                    <span>A React modal with animations.</span>
+                    <br/>
+                    <label for="name">Name (4 to 8 characters):</label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        required
+                        minlength="4"
+                        maxlength="8"
+                    />
+                </div>
                 <button class="vodal-confirm-btn" onClick={hide}>
                     ok
                 </button>
                 <button class="vodal-cancel-btn" onClick={hide}>
                     close
                 </button>
+<<<<<<< HEAD
             </Wodal>
         </div>
+=======
+            </Wodal >
+        </div >
+>>>>>>> 352ce5548337cceca1e4390940a0de2ef67f2c0c
     )
 }
 

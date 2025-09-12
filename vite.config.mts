@@ -6,6 +6,7 @@ import path from 'path'
 const config = defineConfig({
     build: {
         minify: false,
+        emptyOutDir: false,
         lib: {
             entry: ["./src/index.tsx"],
             name: "woby-modal",
@@ -28,15 +29,15 @@ const config = defineConfig({
     },
     plugins: [
         // dts({ entryRoot: './src', outputDir: './dist/types' })
-        tailwindcss(),
+        tailwindcss(), // Re-enabled Tailwind CSS plugin with updated Vite version
     ],
     resolve: {
         alias: {
-            '~': path.resolve(__dirname, 'src'),
+            'woby/jsx-dev-runtime': 'woby',
+            'woby/jsx-runtime': 'woby',
+            'woby': 'woby'
         },
     },
 })
-
-
 
 export default config
