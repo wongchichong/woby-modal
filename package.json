@@ -1,15 +1,15 @@
 {
     "name": "@woby/modal",
     "version": "1.0.8",
+    "publishConfig": {
+        "access": "public"
+    },
     "description": "A Woby modal with animations.",
     "main": "./dist/index.cjs.js",
     "module": "./dist/index.es.js",
     "browser": "./dist/index.umd.js",
     "types": "./dist/types/index.d.ts",
     "type": "module",
-    "publishConfig": {
-        "registry": "https://registry.npmjs.org/"
-    },
     "scripts": {
         "git": "git add . && git commit -m \"Bump version\" && git push",
         "bump": "pnpm version patch",
