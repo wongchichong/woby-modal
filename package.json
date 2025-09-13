@@ -33,21 +33,21 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/wongchichong/modal.git"
+        "url": "git+https://github.com/wobyjs/modal.git"
     },
     "keywords": [
         "woby",
         "modal",
         "animation",
-        "woby-modal",
-        "woby-component"
+        "@woby/modal",
+        "@woby/component"
     ],
     "author": "neverland",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/wongchichong/modal/issues"
+        "url": "https://github.com/wobyjs/modal/issues"
     },
-    "homepage": "https://github.com/wongchichong/modal#readme",
+    "homepage": "https://github.com/wobyjs/modal#readme",
     "peerDependencies": {
         "woby": "workspace:../woby",
         "@woby/styled": "workspace:../styled"
